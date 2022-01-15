@@ -1,11 +1,12 @@
 import React from 'react';
+import FormInput from './components/FormInput'; // greyed-out if not used
 
 const Login = () => {
     const handleFormSubmit = (e) => {
         e.preventDefault();
 
-        let email = e.target.elements.email?.value;
-        let password = e.target.elements.password?.value;
+        const email = e.target.elements.email?.value;
+        const password = e.target.elements.password?.value;
 
         console.log(email, password);
     };
@@ -17,15 +18,7 @@ const Login = () => {
                 </h1>
 
                 <form onSubmit={handleFormSubmit}>
-                    <div>
-                        <label htmlFor='email'>Email</label>
-                        <input
-                            type='email'
-                            className={`w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4 hover:shadow-md`}
-                            id='email'
-                            placeholder='Your Email'
-                        />
-                    </div>
+                <FormInput />
                     <div>
                         <label htmlFor='password'>Password</label>
                         <input
